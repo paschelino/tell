@@ -1,0 +1,3 @@
+rootProject.name = 'tell'
+rootProject.buildFileName = 'build.gradle.kts'
+
