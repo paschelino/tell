@@ -73,6 +73,4 @@ class UriTest {
                 `is`("https:/some/path?some=query&with=params#fragment")
         )
     }
-
-
 }
