@@ -1,7 +1,7 @@
 # Tell
-Besides that Wilhelm Tell is the big liberty hero in the myths of
-the canton Uri in Switzerland, Tell is a URI builder library
-written in Kotlin. It's implementation builds upon the relevant
+Besides that [Wilhelm Tell](https://en.wikipedia.org/wiki/William_Tell) is the big liberty hero
+in the myths of the [canton of Uri](https://en.wikipedia.org/wiki/Canton_of_Uri) in Switzerland,
+Tell is a URI builder library written in Kotlin. It's implementation builds upon the relevant
 RFCs for URIs, which are:
 * [RFC 3986 - Uniform Resource Identifier (URI): Generic Syntax](https://tools.ietf.org/html/rfc3986) _in progress_
 * [RFC 8141 - Uniform Resource Names (URNs)](https://tools.ietf.org/html/rfc8141) _TODO_
