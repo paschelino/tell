@@ -9,9 +9,18 @@ jobs:
       - run:
           name: Clean
           command: ./gradlew clean
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle.kts" }}-settings-{{ checksum "settings.gradle" }}
       - run:
           name: Check
           command: ./gradlew check
       - run:
           name: Test
           command: ./gradlew test
+      - run:
+          name: Jar
+          command: ./gradlew jar
+      - store_test_results:
+          path: target/surefire-reports
