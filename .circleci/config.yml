@@ -6,8 +6,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: Clean
+          command: ./gradlew clean
       - run:
-          name: Print the Current Time
-          command: date
+          name: Check
+          command: ./gradlew check
+      - run:
+          name: Test
+          command: ./gradlew test
