@@ -42,8 +42,4 @@ class SegmentTest {
     @Test fun addingASegmentProducesAPath() {
         assertThat(segment("a") + segment("b"), `is`(path("/a/b")))
     }
-
-    @Test fun bla() {
-        assertThat("a", `is`("b"))
-    }
 }
