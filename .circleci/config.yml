@@ -1,8 +1,9 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/tell
     docker:
-      - image: debian:stretch
+      - image: circleci/openjdk:8-jdk
     steps:
       - checkout
       - run:
