@@ -1,5 +1,7 @@
 package de.paschelino.tell.parts
 
+import de.paschelino.tell.parts.Path.Companion.path
+
 data class Segment private constructor(val token: String) {
     companion object {
         fun segment(rawToken: String): Segment {
@@ -16,7 +18,9 @@ data class Segment private constructor(val token: String) {
         private val format = """/*(?<token>[^/]*)/*""".toRegex()
     }
 
+    operator fun plus(segment: Segment) : Path = path(this, segment)
+
     override fun toString(): String {
-        return "/" + token
+        return if(token.isEmpty()) "" else "/" + token
     }
 }

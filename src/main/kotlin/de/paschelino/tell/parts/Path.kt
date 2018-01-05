@@ -1,7 +1,6 @@
 package de.paschelino.tell.parts
 
 import de.paschelino.tell.parts.Segment.Companion.segment
-import java.nio.file.Paths
 
 data class Path(val segments: List<Segment>) : HierPart {
 
@@ -9,7 +8,8 @@ data class Path(val segments: List<Segment>) : HierPart {
         val EMPTY = Path(emptyList())
 
         fun path(rawPath: String) : Path {
-            return Path(rawPath.split("""\/""".toRegex()).map { segment(it) })
+            val tokens = rawPath.split("""\/""".toRegex()).filter { !it.isEmpty() }
+            return Path(tokens.map { segment(it) })
         }
 
         fun path(vararg segments: Segment) : Path {
