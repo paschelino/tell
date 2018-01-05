@@ -31,6 +31,7 @@ repositories {
 
 dependencies {
     compile(kotlinModule("stdlib-jdk8", kotlin_version))
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.2")
     testCompile("org.junit.jupiter:junit-jupiter-engine:5.0.2")
     testCompile("org.hamcrest:hamcrest-junit:2.0.0.0")
 }
@@ -38,4 +39,3 @@ dependencies {
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
-
