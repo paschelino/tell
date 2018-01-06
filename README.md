@@ -1,4 +1,7 @@
 # Tell
+
+[![CircleCI](https://circleci.com/gh/paschelino/tell/tree/master.svg?style=svg)](https://circleci.com/gh/paschelino/tell/tree/master)
+
 Besides that [Wilhelm Tell](https://en.wikipedia.org/wiki/William_Tell) is the big liberty hero
 in the myths of the [canton of Uri](https://en.wikipedia.org/wiki/Canton_of_Uri) in Switzerland,
 Tell is a URI builder library written in Kotlin. It's implementation builds upon the relevant
