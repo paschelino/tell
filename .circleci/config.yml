@@ -13,7 +13,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle.kts" }}-settings-{{ checksum "settings.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-settings-{{ checksum "settings.gradle" }}
       - run:
           name: Test
           command: ./gradlew junitPlatformTest
