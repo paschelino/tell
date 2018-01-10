@@ -34,10 +34,6 @@ object SegmentSpec : Spek({
         it("createWithMultipleSlashPostfix") {
             assertThat(segment("a//").toString(), `is`("/a"))
         }
-
-        it("breaks") {
-            assertThat(1, `is`(2))
-        }
     }
 
     describe("Empty segments:") {
