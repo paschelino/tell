@@ -1,6 +1,7 @@
 # Tell
 
 [![CircleCI](https://circleci.com/gh/paschelino/tell/tree/master.svg?style=svg)](https://circleci.com/gh/paschelino/tell/tree/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cc0e2121bf984af69cda0cb3c0f785ee)](https://www.codacy.com/app/paschelino/tell?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=paschelino/tell&amp;utm_campaign=Badge_Grade)
 
 Besides that [Wilhelm Tell](https://en.wikipedia.org/wiki/William_Tell) is the big liberty hero
 in the myths of the [canton of Uri](https://en.wikipedia.org/wiki/Canton_of_Uri) in Switzerland,
