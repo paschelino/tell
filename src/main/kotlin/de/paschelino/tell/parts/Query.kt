@@ -1,12 +1,14 @@
 package de.paschelino.tell.parts
 
-class Query(vararg val params: Param) {
+class Query(val params: List<Param>) {
     companion object {
-        val EMPTY = Query()
+        val EMPTY = Query(emptyList())
+
+        fun query(vararg params: Param) = Query(params.asList())
     }
 
     operator fun plus(param: Param) : Query {
-        return Query(*this.params, param)
+        return Query(this.params + param)
     }
 
     override fun toString(): String {
