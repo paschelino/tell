@@ -3,6 +3,10 @@ package de.paschelino.tell.parts
 import de.paschelino.tell.Uri
 
 data class Schema(val token: String) {
+    init {
+        if(token.startsWith("+")) throw MalformedException("Schema may not start with '+'!")
+    }
+
     operator fun plus(hierPart: HierPart): Uri {
         return when (hierPart) {
             is AbsoluteHierPart -> Uri(this, hierPart)
