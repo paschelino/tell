@@ -4,7 +4,10 @@ import de.paschelino.tell.Uri
 
 data class Schema(val token: String) {
     init {
-        if(token.startsWith("+")) throw MalformedException("Schema may not start with '+'!")
+        val start = token.first().toString()
+        if(!CharacterClasses.ALPHA.matches(start)) {
+            throw MalformedException("Schema may not start with '$start'!")
+        }
     }
 
     operator fun plus(hierPart: HierPart): Uri {
