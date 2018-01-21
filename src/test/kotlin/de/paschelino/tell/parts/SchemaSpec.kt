@@ -32,7 +32,7 @@ object SchemaSpec : Spek({
                     thrown = e
                 }
                 assertThat(thrown, `is`(instanceOf(MalformedException::class.java)))
-                assertThat(thrown!!.message, `is`("Schema may not start with '$s'!"))
+                assertThat(thrown?.message, `is`("Schema may not start with '$s'!"))
             }
 
             it("accepts the $s, if it's not the first char") {
