@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/tell
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:21.0
     steps:
       - checkout
       - run:
@@ -13,15 +13,15 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-settings-{{ checksum "settings.gradle" }}
+          key: jars-{{ checksum "build.gradle.kts" }}-settings-{{ checksum "settings.gradle.kts" }}
       - run:
           name: Test
-          command: ./gradlew junitPlatformTest
+          command: ./gradlew test
       - store_test_results:
-          path: build/test-results/junit-platform
+          path: build/test-results/test
       - run:
           name: Coverage Report
-          command: ./gradlew junitPlatformJacocoReport
+          command: ./gradlew jacocoTestReport
       - store_artifacts:
           path: build/reports
       - run:

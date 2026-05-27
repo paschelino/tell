@@ -21,5 +21,5 @@ data class Schema(val token: String) {
         }
     }
 
-    override fun toString() = token.toLowerCase()
+    override fun toString() = token.lowercase()
 }
