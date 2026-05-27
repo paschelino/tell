@@ -1,54 +1,50 @@
 package de.paschelino.tell.parts
 
-import org.jetbrains.spek.api.Spek
-import org.jetbrains.spek.api.dsl.describe
-
 import de.paschelino.tell.parts.Path.Companion.path
 import de.paschelino.tell.parts.Segment.Companion.segment
-import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.MatcherAssert.assertThat
-import org.jetbrains.spek.api.dsl.it
+import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.shouldBe
 
-object SegmentSpec : Spek({
+class SegmentSpec : DescribeSpec({
     describe("Segment creation:") {
         it("creates with non empty token and no slash") {
-            assertThat(segment("a").toString(), `is`("/a"))
+            segment("a").toString() shouldBe "/a"
         }
 
         it("createWithDifferentNonEmptyTokenNoSlash") {
-            assertThat(segment("abc").toString(), `is`("/abc"))
+            segment("abc").toString() shouldBe "/abc"
         }
 
         it("createWithSlashPrefix") {
-            assertThat(segment("/a").toString(), `is`("/a"))
+            segment("/a").toString() shouldBe "/a"
         }
 
         it("createWithMultipleSlashPrefix") {
-            assertThat(segment("//a").toString(), `is`("/a"))
+            segment("//a").toString() shouldBe "/a"
         }
 
         it("createWithSlashPostfix") {
-            assertThat(segment("a/").toString(), `is`("/a"))
+            segment("a/").toString() shouldBe "/a"
         }
 
         it("createWithMultipleSlashPostfix") {
-            assertThat(segment("a//").toString(), `is`("/a"))
+            segment("a//").toString() shouldBe "/a"
         }
     }
 
     describe("Empty segments:") {
         it("anEmptySegmentProducesAnEmptyString") {
-            assertThat(segment("").toString(), `is`(""))
+            segment("").toString() shouldBe ""
         }
 
         it("definesAConstantForTheEmptySegment") {
-            assertThat(Segment.EMPTY, `is`(segment("")))
+            Segment.EMPTY shouldBe segment("")
         }
     }
 
     describe("Segment addition:") {
         it("addingASegmentProducesAPath") {
-            assertThat(segment("a") + segment("b"), `is`(path("/a/b")))
+            segment("a") + segment("b") shouldBe path("/a/b")
         }
     }
 })

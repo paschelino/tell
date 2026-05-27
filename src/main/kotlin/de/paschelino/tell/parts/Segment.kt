@@ -2,6 +2,7 @@ package de.paschelino.tell.parts
 
 import de.paschelino.tell.parts.Path.Companion.path
 
+@ConsistentCopyVisibility
 data class Segment private constructor(val token: String) {
     companion object {
         fun segment(rawToken: String): Segment {
